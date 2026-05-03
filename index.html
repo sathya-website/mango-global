@@ -1,0 +1,237 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .poster {
+    background: linear-gradient(145deg, #0a0f2e 0%, #0d1b4b 50%, #0a2240 100%);
+    color: #fff;
+    font-family: var(--font-sans);
+    border-radius: 16px;
+    padding: 40px 36px 36px;
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .accent-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #00d4aa, #3a7bd5, #00d4aa);
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(0,212,170,0.15);
+    border: 1px solid rgba(0,212,170,0.4);
+    color: #00d4aa;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .meta-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 0.5px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+  }
+  .meta-chip .icon { font-size: 14px; }
+  .stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 26px;
+  }
+  .stack-tag {
+    background: rgba(58,123,213,0.2);
+    border: 1px solid rgba(58,123,213,0.45);
+    color: #7ab3f5;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 6px;
+  }
+  .divider {
+    border: none;
+    border-top: 0.5px solid rgba(255,255,255,0.1);
+    margin: 0 0 22px;
+  }
+  .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #00d4aa;
+    margin-bottom: 12px;
+  }
+  .req-list {
+    list-style: none;
+    margin-bottom: 22px;
+  }
+  .req-list li {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .req-list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #00d4aa;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .bonus-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 28px;
+  }
+  .bonus-tag {
+    background: rgba(0,212,170,0.1);
+    border: 0.5px solid rgba(0,212,170,0.3);
+    color: rgba(0,212,170,0.9);
+    font-size: 12px;
+    padding: 4px 11px;
+    border-radius: 6px;
+  }
+  .contact-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    flex: 1;
+    min-width: 200px;
+  }
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s;
+    flex: 1;
+    justify-content: center;
+    min-width: 160px;
+  }
+  .btn:hover { opacity: 0.88; }
+  .btn-email { background: #3a7bd5; color: #fff; }
+  .btn-wa { background: #25d366; color: #fff; }
+  .reloc {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.5px;
+  }
+</style>
+
+<div class="poster">
+  <div class="accent-bar"></div>
+
+  <div class="badge">Now Hiring</div>
+  <div class="title">Staff Software Engineer — Back End</div>
+
+  <div class="meta-row">
+    <div class="meta-chip"><span class="icon">📍</span> Bangkok, Thailand</div>
+    <div class="meta-chip"><span class="icon">🗓</span> 8+ Years Experience</div>
+    <div class="meta-chip"><span class="icon">✈️</span> Relocation Provided</div>
+  </div>
+
+  <div class="section-title">Tech Stack</div>
+  <div class="stack-row">
+    <span class="stack-tag">Scala</span>
+    <span class="stack-tag">Java</span>
+    <span class="stack-tag">Kotlin</span>
+    <span class="stack-tag">C#</span>
+    <span class="stack-tag">Go</span>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">What You'll Need to Succeed</div>
+  <ul class="req-list">
+    <li>10+ years developing performance-critical production applications in Scala, Java, Kotlin, C#, Go or similar</li>
+    <li>Strong RDBMS knowledge — SQL Server, Oracle, MySQL or equivalent</li>
+    <li>Ability to direct significant company-wide projects and set technical vision</li>
+    <li>Deeply involved in architectural decisions, setting standards and direction for the team</li>
+    <li>Implement advanced CI/CD pipelines and robust testing strategies for high code quality</li>
+    <li>Good command of the English language</li>
+    <li>Passion for software development and continuous self-improvement</li>
+  </ul>
+
+  <div class="section-title">Bonus Skills</div>
+  <div class="bonus-row">
+    <span class="bonus-tag">NoSQL</span>
+    <span class="bonus-tag">Kafka</span>
+    <span class="bonus-tag">RabbitMQ</span>
+    <span class="bonus-tag">ActiveMQ</span>
+    <span class="bonus-tag">MSMQ</span>
+    <span class="bonus-tag">Play Framework</span>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">Contact</div>
+  <div class="contact-row">
+    <div class="contact-item">✉️ &nbsp;sathya@mangoglobal.in</div>
+    <div class="contact-item">📱 &nbsp;+60-1111 567 554</div>
+  </div>
+
+  <div class="btn-row">
+    <a class="btn btn-email" href="mailto:sathya@mangoglobal.in?subject=Application%20-%20Staff%20Software%20Engineer%20Back%20End&body=Hi%2C%0A%0AI%20am%20interested%20in%20the%20Staff%20Software%20Engineer%20(Back%20End)%20position%20based%20in%20Bangkok.%0A%0AName%3A%0AYears%20of%20Experience%3A%0ACurrent%20Location%3A%0A%0ALooking%20forward%20to%20hearing%20from%20you.">
+      ✉️ Apply via Email
+    </a>
+    <a class="btn btn-wa" href="https://wa.me/601111567554?text=Hi%2C%20I%20am%20interested%20in%20the%20Staff%20Software%20Engineer%20(Back%20End)%20position%20in%20Bangkok.%20Please%20let%20me%20know%20the%20next%20steps." target="_blank">
+      💬 Apply via WhatsApp
+    </a>
+  </div>
+
+  <div class="reloc">Relocation assistance provided for candidates outside Thailand</div>
+</div>
