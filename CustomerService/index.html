@@ -1,0 +1,289 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .poster {
+    background: linear-gradient(145deg, #0a1628 0%, #0d2137 55%, #0a1a2e 100%);
+    color: #fff;
+    font-family: var(--font-sans, 'Segoe UI', sans-serif);
+    border-radius: 16px;
+    padding: 40px 36px 36px;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .accent-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff);
+  }
+  .top-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(0,198,255,0.15);
+    border: 1px solid rgba(0,198,255,0.4);
+    color: #00c6ff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .doj-badge {
+    background: rgba(255,180,0,0.15);
+    border: 1px solid rgba(255,180,0,0.4);
+    color: #ffb400;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    margin: 14px 0 4px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 22px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .meta-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 0.5px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.82);
+  }
+  .divider {
+    border: none;
+    border-top: 0.5px solid rgba(255,255,255,0.1);
+    margin: 0 0 22px;
+  }
+  .section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: #00c6ff;
+    margin-bottom: 14px;
+  }
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .lang-card {
+    background: rgba(0,114,255,0.12);
+    border: 1px solid rgba(0,198,255,0.25);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .lang-flag { font-size: 26px; }
+  .lang-info { flex: 1; }
+  .lang-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+  .lang-country {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+  }
+  .req-list {
+    list-style: none;
+    margin-bottom: 22px;
+  }
+  .req-list li {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+    margin-bottom: 9px;
+  }
+  .req-list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #0072ff;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .highlight { color: #00c6ff; font-weight: 600; }
+  .resp-box {
+    background: rgba(0,198,255,0.07);
+    border: 0.5px solid rgba(0,198,255,0.2);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    margin-bottom: 26px;
+  }
+  .contact-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    flex: 1;
+    min-width: 200px;
+  }
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s;
+    flex: 1;
+    justify-content: center;
+    min-width: 160px;
+  }
+  .btn:hover { opacity: 0.88; }
+  .btn-email { background: #0072ff; color: #fff; }
+  .btn-wa { background: #25d366; color: #fff; }
+  .footer-note {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.4px;
+  }
+</style>
+
+<div class="poster">
+  <div class="accent-bar"></div>
+
+  <div class="top-row">
+    <span class="badge">Now Hiring — Multiple Openings</span>
+    <span class="doj-badge">🗓 Join by 22 June</span>
+  </div>
+
+  <div class="title">Customer Service — Voice & Non-Voice</div>
+  <div class="subtitle">Native Language Speakers Only</div>
+
+  <div class="meta-row">
+    <div class="meta-chip">📍 Malaysia (Relocation Provided)</div>
+    <div class="meta-chip">🕐 Rotational Shift · 5 Days</div>
+    <div class="meta-chip">🌐 English B1 Required</div>
+  </div>
+
+  <div class="section-title">Languages We're Hiring For</div>
+  <div class="lang-grid">
+    <div class="lang-card">
+      <div class="lang-flag">🇸🇪</div>
+      <div class="lang-info">
+        <div class="lang-name">Swedish</div>
+        <div class="lang-country">Sweden · Native C1</div>
+      </div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-flag">🇩🇰</div>
+      <div class="lang-info">
+        <div class="lang-name">Danish</div>
+        <div class="lang-country">Denmark · Native C1</div>
+      </div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-flag">🇳🇴</div>
+      <div class="lang-info">
+        <div class="lang-name">Norwegian</div>
+        <div class="lang-country">Norway · Native C1</div>
+      </div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-flag">🇳🇱</div>
+      <div class="lang-info">
+        <div class="lang-name">Dutch</div>
+        <div class="lang-country">Netherlands · Native C1</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">Requirements</div>
+  <ul class="req-list">
+    <li><span class="highlight">Language:</span>&nbsp; Native language at C1 level · English at B1 level minimum</li>
+    <li><span class="highlight">Assessment:</span>&nbsp; Language test for Native + SVAR for English (Mic & Video Camera required)</li>
+    <li><span class="highlight">Experience:</span>&nbsp; Minimum 6 months Customer Service experience</li>
+    <li><span class="highlight">Education:</span>&nbsp; Minimum Diploma — High School Certificate considered with relevant experience</li>
+    <li><span class="highlight">Travel Docs:</span>&nbsp; Must hold a valid passport</li>
+    <li><span class="highlight">Relocation Package:</span>&nbsp; Visa processing, flight tickets & initial accommodation provided</li>
+  </ul>
+
+  <div class="section-title">Responsibilities</div>
+  <div class="resp-box">
+    📞 Handle inbound <strong>calls and chats</strong> from customers in your native language. Deliver exceptional customer experience across both voice and non-voice channels.
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">Apply Now</div>
+  <div class="contact-row">
+    <div class="contact-item">✉️ &nbsp;sathya@mangoglobal.in</div>
+    <div class="contact-item">📱 &nbsp;+60-1111 567 554</div>
+  </div>
+
+  <div class="btn-row">
+    <a class="btn btn-email" href="mailto:sathya@mangoglobal.in?subject=Application%20-%20Customer%20Service%20Native%20Speaker&body=Hi%2C%0A%0AI%20am%20interested%20in%20the%20Customer%20Service%20(Voice%20%26%20Non-Voice)%20position%20in%20Malaysia.%0A%0AName%3A%0ANative%20Language%3A%0AEnglish%20Level%3A%0AYears%20of%20CS%20Experience%3A%0ACurrent%20Location%3A%0A%0ALooking%20forward%20to%20hearing%20from%20you.">
+      ✉️ Apply via Email
+    </a>
+    <a class="btn btn-wa" href="https://wa.me/601111567554?text=Hi%2C%20I%20am%20interested%20in%20the%20Customer%20Service%20(Voice%20%26%20Non-Voice)%20role%20in%20Malaysia.%20My%20native%20language%20is%20[Language].%20Please%20let%20me%20know%20the%20next%20steps." target="_blank">
+      💬 Apply via WhatsApp
+    </a>
+  </div>
+
+  <div class="footer-note">Visa · Flight Tickets · Initial Accommodation — all covered &nbsp;|&nbsp; Join by 22 June</div>
+</div>
